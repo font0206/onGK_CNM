@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 100%; display: flex;flex-direction: column;justify-content: center;align-items: center;">
+        <h1>Thêm mới</h1>
+        <form style="display: flex;flex-direction: column;" id="create" method="POST" action="/" enctype="multipart/form-data" onsubmit="return checkForm()">
+            <div style="display: flex; flex-direction: column;">
+                <input id="ten-bao" type="text" name="ten_bao" placeholder="tên báo"/>
+                <div style="height: 10px;">
+                    <span id="err-ten-bao"></span>
+                </div>
+            </div>
+            
+            <br>
+           
+            <div style="display: flex; flex-direction: column;">
+                <input id="ten-tacgia" type="text" name="ten_tacgia" placeholder="tên tác giả"/>
+                <div style="height: 10px;">
+                    <span id="err-tacgia"></span>
+                </div>
+            </div>
+            <br>
+            <div style="display: flex; flex-direction: column;">
+                <input id="isbn" type="text" name="isbn" placeholder="chỉ số ISBN"/>
+                <div style="height: 10px;">
+                    <span id="err-isbn">erro ten bao</span>
+                </div>
+            </div>
+            
+            <br><div style="display: flex; flex-direction: column;">
+                <input id="so-trang" type="number" name="so_trang" placeholder="Số trang" min="1"/>
+                <div style="height: 10px;">
+                    <span id="err-so-trang">erro ten bao</span>
+                </div>
+            </div>
+            
+            <br>
+            <div style="display: flex; flex-direction: column;">
+                <input id="nam" type="number" name="nam_sb" placeholder="Năm xuất bản" min="1900" max="2023"/>
+                <div style="height: 10px;">
+                    <span  id="err-nam">erro ten bao</span>
+                </div>
+            </div>
+            
+            <br>
+            <input type="submit" value="ADD"/>
+        </form>
+    </div>
+    <script>
+            var tenBao = document.getElementById('ten-bao');
+            var errTenBao = document.getElementById('err-ten-bao');
+
+            var tenTG = document.getElementById('ten-tacgia');
+            var errTenTG = document.getElementById('err-tacgia');
+
+            var namXB = document.getElementById('nam');
+            var errNam = document.getElementById('err-nam');
+            function checkForm(){
+                if(tenBao.value ===""){
+                     errTenBao.innerHTML="không được để trống";
+                    return false;
+                }else
+                    errTenBao.innerHTML="";
+                if(tenTG.value ===""){
+                    errTenTG.innerHTML="không được để trống";
+                    return false;
+                }else errTenTG.innerHTML="";
+                if(namXB.value ===""){
+                    errNam.innerHTML="không được để trống";
+                    return false;
+                }else  errNam.innerHTML="";
+            }
+            
+
+    </script>
+</body>
+</html>
